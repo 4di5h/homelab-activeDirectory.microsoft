@@ -32,14 +32,14 @@ Follow the same rule for the processor settings.
 14. Go ahead and install the desktop experience and install the Windows server onto the VM.
 15. Use my Powershell script setup-server.ps1 script to apply the AD setup on the Server VM
 > >cd C:\
-> >powershell.exe -ExecutionPolicy Bypass .\setup-server.exe -one
+> >powershell.exe -ExecutionPolicy Bypass .\setup-server.ps1 -one
 16. In order to create more users and generate user names, Josh's [scripts](https://github.com/joshmadakor1/AD_PS), namely 1_CREATE_USERS.ps1 and Generate-Names-Create-Users.ps1 is to be used along with the name list file names.txt | These files are in my repo as well for reference.
 #### Setting up the client - Windows 10
 17. Followed the same steps for setting up the VM as the server, except no need for NAT, only to choose Internal Network
 18. Installed the Windows OS on the VM.
 19. Use my Powershell script setup-client.ps1 script to connect the domain controller
 > >cd C:\
-> >powershell.exe -ExecutionPolicy Bypass .\setup-client.exe -one
+> >powershell.exe -ExecutionPolicy Bypass .\setup-client.ps1
 20. To verify whether the client has been properly connected, on the Server VM, head over to the DHCP tab in Server Manager and there should be a machine available under the Address Leases, this is the client machine and it verifies this has been properly connected.
 21. To add further client computers, can follow the same steps as above, obviously with a different DHCP IP available in the range.
 
